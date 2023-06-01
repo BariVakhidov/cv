@@ -96,7 +96,7 @@
 
 %debug page outer frames
 %\usepackage{showframe}
-
+\newcommand{\itemmarker}{{\small\textbullet}}
 %----------------------------------------------------------------------------------------
 %	BEGIN DOCUMENT
 %----------------------------------------------------------------------------------------
@@ -116,48 +116,80 @@
 % \end{tabularx}
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Your Name} \\[7.5pt]
-\href{https://github.com/username}{\raisebox{-0.05\height}\faGithub\ username} \ $|$ \ 
-\href{https://linkedin.com/in/username}{\raisebox{-0.05\height}\faLinkedin\ username} \ $|$ \ 
-\href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
-\href{mailto:email@mysite.com}{\raisebox{-0.05\height}\faEnvelope \ email@mysite.com} \ $|$ \ 
-\href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +00.00.000.000} \\
+\Huge{\textbf{Bari Vahidov}} \\[7.5pt]
+\href{https://github.com/BariVakhidov}{\raisebox{-0.05\height}\faGithub\ BariVakhidov} \ $|$ \ 
+\href{https://linkedin.com/in/bariVahidov}{\raisebox{-0.05\height}\faLinkedin\ bariVahidov} \ $|$ \ 
+\href{mailto:memeshuntergod@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ memeshuntergod@gmail.com} \ 
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
-% EXPERIENCE SECTIONS
+%	SKILLS
 %----------------------------------------------------------------------------------------
-
-%Interests/ Keywords/ Summary
-\section{Summary}
-This CV is automatically generated and deployed using the \href{https://github.com/jitinnair1/autoCV}{autoCV} template along with GitHub Actions such that a new version of the CV is compiled, published and ready for use when the cv.tex file is updated. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\itemmarker &  \normalsize{TypeScript $|$ JavaScript $|$ React $|$ Java $|$ WebSockets $|$ HTML $|$ SCSS $|$ CSS }\\
+\itemmarker &  \normalsize{Redux $|$ Redux toolkit $|$ Redux-Saga $|$ MobX $|$ styled-components $|$ Ant Design $|$ Material-UI}\\
+\itemmarker  &  \normalsize{Webpack $|$ Vite $|$ Babel $|$  Cypress $|$ Stylelint $|$ Eslint $|$ CI/CD $|$ Docker $|$ GitLab Actions $|$ Git $|$ Storybook}\\
+\itemmarker  &  \normalsize{Frontend $|$ English, Russian}\\
+\end{tabularx}
 
 %Experience
-\section{Work Experience}
+\section{Experience}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Designation} & \hfill Jan 2021 - present \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
-\end{tabularx}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Designation} & \hfill Mar 2019 - Jan 2021 \\[3.75pt]
+\textbf{Frontend developer $|$ \underline{Invitro IT}} & \hfill Feb 2022 - present, remote \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--] long long line of blah blah that will wrap when the table fills the column width
-        \item[--] again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah
+        \item[--] Designed and implemented internal frontend applications of Commonwealth of Independent States largest  medical company, with a turnover over \$2 million per day using react, redux, typescript.
+        \item[--] Developed internal logistic application from legacy project based on Java/Backbone.js
+        \item[--] Created a Design System for the whole company's frontend projects
+        \item[--] Configured WebPack and Vite to bundle and optimize the application's code, improving performance and reducing load times by 80\%
+        \item[--] Led a frontend team of 5 members on internal products, mentored junior developers and helped teammates improve their skills
+        \item[--] Integrated performance monitoring and error tracking services (Sentry.IO, Elastic RUM) for internal frontend applications
+        \item[--] Continuous Integration/Deployment Pipeline Integration, merge requests, code reviews, e2e testing
     \end{itemize}
     \end{minipage}
 }
 \end{tabularx}
 
-%Projects
-\section{Projects}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Frontend developer $|$ \underline{Noveo Group}} & \hfill Oct 2021 - Dec 2022, Cyprus \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Outsource development of commercial projects from scratch and integration with legacy projects
+        \item[--] Designed and developed chat and planning modules, implemented B2B application for social activities, created a design system with storybook documentation 
+        \item[--] Worked close with Node.js developers to build well-designed products
+        \item[--] Organized unit and end-to-end testing in the project, reducing software defects
+        \item[--] Managed team members, participated in scrum activities, consulted colleagues, and evaluated risks
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
+\textbf{Frontend developer $|$ \underline{NORD CLAN}} & \hfill Mar 2021 - Oct 2021, Saint-Petersburg \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Migrated legacy frontend application from jQuery to React and Redux, decreasing loading time and improving user experience
+        \item[--] Developed SPA for the medical/healthcare company. Built architecture of the application from scratch
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Web developer $|$ \underline{Upwork / freelance}} & \hfill May 2019 - Mar 2021, remote worldwide\\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Implementing landings and simple SPA using React
+        \item[--] Integrated multiple modules on Java and Delphi
+    \end{itemize}
+    \end{minipage}
+}
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -165,31 +197,8 @@ This CV is automatically generated and deployed using the \href{https://github.c
 %----------------------------------------------------------------------------------------
 \section{Education}
 \begin{tabularx}{\linewidth}{@{}l X@{}}	
-2030 - present & PhD (Subject) at \textbf{University} \hfill \normalsize (GPA: 4.0/4.0) \\
-
-2023 - 2027 & Bachelor's Degree at \textbf{College} \hfill (GPA: 4.0/4.0) \\ 
-
-2022 & Class 12th Some Board \hfill  (Grades) \\
-
-2021 & Class 10th Some Board \hfill  (Grades) \\
-\end{tabularx}
-
-%----------------------------------------------------------------------------------------
-%	PUBLICATIONS
-%----------------------------------------------------------------------------------------
-\section{Publications}
-\begin{refsection}[citations.bib]
-\nocite{*}
-\printbibliography[heading=none]
-\end{refsection}
-
-%----------------------------------------------------------------------------------------
-%	SKILLS
-%----------------------------------------------------------------------------------------
-\section{Skills}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
-Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
+2016 - 2020 & Bachelor's Degree at \textbf{Saint Petersburg Mining University} \hfill \normalsize (GPA: 4.7/5.0) \\
+2013 - 2016 & Mathematics Degree at \textbf{AG SPSU — Academic Gymnasium} \hfill (GPA: 4.0/5.0) \\ 
 \end{tabularx}
 
 \vfill
