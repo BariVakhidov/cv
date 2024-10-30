@@ -1,35 +1,12 @@
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-%	The MIT License (MIT)
-%
-%	Copyright (c) 2021 Jitin Nair
-%
-%	Permission is hereby granted, free of charge, to any person obtaining a copy
-%	of this software and associated documentation files (the "Software"), to deal
-%	in the Software without restriction, including without limitation the rights
-%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-%	copies of the Software, and to permit persons to whom the Software is
-%	furnished to do so, subject to the following conditions:
-%
-%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-%	THE SOFTWARE.
-%
-%
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-
 %----------------------------------------------------------------------------------------
-%	DOCUMENT DEFINITION
+%  DOCUMENT DEFINITION
 %----------------------------------------------------------------------------------------
 
 % article class because we want to fully customize the page and not use a cv template
 \documentclass[a4paper,12pt]{article}
 
 %----------------------------------------------------------------------------------------
-%	FONT
+%  FONT
 %----------------------------------------------------------------------------------------
 
 % % fontspec allows you to use TTF/OTF fonts directly
@@ -45,7 +22,7 @@
 % {Fontin.otf}
 
 %----------------------------------------------------------------------------------------
-%	PACKAGES
+%  PACKAGES
 %----------------------------------------------------------------------------------------
 \usepackage{url}
 \usepackage{parskip}
@@ -95,17 +72,18 @@
 
 %debug page outer frames
 %\usepackage{showframe}
-\newcommand{\itemmarker}{{\small\textbullet}}
+\newcommand{
+\itemmarker}{{\small\textbullet}}
 %----------------------------------------------------------------------------------------
-%	BEGIN DOCUMENT
+%  BEGIN DOCUMENT
 %----------------------------------------------------------------------------------------
 \begin{document}
 
 % non-numbered pages
-    \pagestyle{empty}
+\pagestyle{empty}
 
 %----------------------------------------------------------------------------------------
-%	TITLE
+%  TITLE
 %----------------------------------------------------------------------------------------
 
 % \begin{tabularx}{\linewidth}{ @{}X X@{} }
@@ -114,81 +92,82 @@
 % \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
 % \end{tabularx}
 
-    \begin{tabularx}{\linewidth}{@{} C @{}}
-        \Huge{\textbf{Bari Vahidov}} \\[7.5pt]
-        \href{https://github.com/BariVakhidov}{\raisebox{-0.05\height}\faGithub\ BariVakhidov} \ $|$ \
-        \href{https://linkedin.com/in/bariVahidov}{\raisebox{-0.05\height}\faLinkedin\ bariVahidov} \ $|$ \
-        \href{https://t.me/Meme_hunt}{\raisebox{-0.05\height}\faTelegram\ BariVahidov} \ $|$ \
-        \href{mailto:vahidovbari@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ vahidovbari@gmail.com} \
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{} C @{}}
+  \Huge{\textbf{Bari Vakhidov}} \\[7.5pt]
+  \href{https://github.com/BariVakhidov}{\raisebox{-0.05\height}\faGithub\ BariVakhidov} \ $|$ \
+  \href{https://linkedin.com/in/bariVahidov}{\raisebox{-0.05\height}\faLinkedin\ bariVakhidov} \ $|$ \
+  \href{https://t.me/Meme_hunt}{\raisebox{-0.05\height}\faTelegram\ BariVakhidov} \ $|$ \
+  \href{mailto:vahidovbari@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ vahidovbari@gmail.com} \
+\end{tabularx}
 
 %----------------------------------------------------------------------------------------
-%	SKILLS
+%  SKILLS
 %----------------------------------------------------------------------------------------
-    \section{Skills}\label{sec:skills}
-    \begin{tabularx}{\linewidth}{@{}l X@{}}
-        \itemmarker & \normalsize{TypeScript $|$ JavaScript $|$ Go $|$ HTML $|$ SCSS $|$ CSS $|$ Java }\\
-        \itemmarker & \normalsize{React $|$ Node.js $|$ Express $|$ Redux $|$ Redux toolkit $|$ Redux-Saga $|$ go-chi $|$ MongoDB $|$ PostgreSQL}\\
-        \itemmarker & \normalsize{Webpack $|$ Vite $|$ Babel $|$  Cypress $|$ Stylelint $|$ Turborepo $|$ CI/CD $|$ Docker $|$ GitLab Actions $|$ Git $|$ Storybook}\\
-    \end{tabularx}
+\section{Skills}\label{sec:skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\itemmarker & \normalsize{Go $|$ TypeScript $|$ JavaScript $|$ Java $|$  Node.js $|$ Express.js $|$ React }\\
+\itemmarker & \normalsize{PostgreSQL $|$ Kafka $|$ Redis $|$ MongoDB $|$ go-chi $|$ pgx $|$ sqlc $|$ mockery $|$ Prometheus $|$ Grafana}\\
+\itemmarker & \normalsize{REST $|$ gRPC $|$ Webscoket $|$ CI/CD $|$ Docker$|$ Git $|$ Swagger $|$ Elasticsearch $|$ Kibana $|$ Alertmanager}\\
+\end{tabularx}
 
 %Experience
-    \section{Experience}\label{sec:experience}
+\section{Experience}\label{sec:experience}
 
-    \begin{tabularx}{\linewidth}{ @{}l r@{} }
-        \textbf{Senior Software Engineer $|$ \underline{Invitro IT}} & \hfill remote, \textbf{Feb 2022 - present} \\[3.75pt]
-        \multicolumn{2}{@{}X@{}}{
-            \begin{minipage}[t]{\linewidth}
-                \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-                    \item[--] Lead a frontend team of 5 members on internal products, mentored junior developers, and assisted teammates in enhancing their skills.
-                    \item[--] Designed and implemented internal frontend applications for the largest medical company in the Commonwealth of Independent States, with \textbf{a daily turnover exceeding \$2 million}, using React, Redux, and TypeScript.
-                    \item[--] Developed an internal logistics application by modernizing a legacy project based on Java/Backbone.js.
-                    \item[--] Established a Design System for all frontend projects across the company.
-                    \item[--] Configured Webpack and Vite to bundle and optimize the application's code, resulting in  \textbf{an 80\% improvement in performance and reduced load times}.
-                    \item[--] Integrated performance monitoring and error tracking services (Sentry.IO, Elastic RUM) for internal frontend applications.
-                    \item[--] Implemented unit tests (Vitest) and end-to-end tests (Cypress) to ensure comprehensive test coverage for the projects.
-                    \item[--] Integrated Continuous Integration/Deployment Pipelines for frontend projects, handled merge requests and code reviews, and actively participated in the hiring process.
-                \end{itemize}
-            \end{minipage}
-        }
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+  \textbf{Senior Full-stack developer $|$ \underline{Invitro IT}} & \hfill remote, \textbf{Feb 2022 - Sep 2024} \\[3.75pt]
+  \multicolumn{2}{@{}X@{}}{
+    \begin{minipage}[t]{\linewidth}
+      \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Designed and implemented internal microservices and frontend applications for the largest medical company in the Commonwealth of Independent States, with \textbf{a daily turnover exceeding \$2 million}, using Go, TypeScript.
+        \item[--] Developed an internal gRPC authentication service utilizing JWT tokens.
+        \item[--] Rewrote several microservices to transition a legacy project based on Java 8 and Spring Boot to Go.
+        \item[--] Established an API gateway in Go for the company's main internal project, simplifying integration with other services and clients.
+        \item[--] Configured bundlers and optimized the application's code, resulting in \textbf{an 80\% improvement in performance and reduced load times}.
+        \item[--] Integrated monitoring and error tracking services (Sentry.IO, Elasticsearch, Prometheus, Alertmanager, Grafana) for internal applications.
+        \item[--] Implemented unit tests and end-to-end tests to ensure comprehensive test coverage for the projects.
+        \item[--] Integrated Continuous Integration/Deployment pipelines using Docker and Kubernetes.
+        \item[--] Lead a frontend team of 5 members on internal products, mentored junior developers, and assisted teammates in enhancing their skills; handled merge requests and code reviews, and actively participated in the hiring process.
+      \end{itemize}
+    \end{minipage}
+  }
+\end{tabularx}
 
-    \begin{tabularx}{\linewidth}{ @{}l r@{} }
-        \textbf{Senior Frontend developer $|$ \underline{Noveo Group}} & \hfill Cyprus, Limassol, remote, \textbf{Oct 2021 - Dec 2022}\\[3.75pt]
-        \multicolumn{2}{@{}X@{}}{
-            \begin{minipage}[t]{\linewidth}
-                \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-                    \item[--] Contributed to the outsourced development of commercial projects, involved in both the creation from scratch and integration with legacy projects.
-                    \item[--] Designed and developed chat and planning modules and B2B application for social activities.
-                    \item[--] Created a comprehensive design system with Storybook documentation.
-                    \item[--] Collaborated closely with Node.js developers to ensure the development of well-designed products.
-                    \item[--] Organized unit and end-to-end testing in the project, resulting in a reduction of software defects.
-                    \item[--] Managed team members, actively participated in scrum activities, provided consultation to colleagues, and evaluated risks.
-                \end{itemize}
-            \end{minipage}
-        }
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+  \textbf{Senior Frontend developer $|$ \underline{Noveo Group}} & \hfill Cyprus, Limassol, remote, \textbf{Oct 2021 - Dec 2022}\\[3.75pt]
+  \multicolumn{2}{@{}X@{}}{
+    \begin{minipage}[t]{\linewidth}
+      \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Contributed to the outsourced development of commercial projects, involved in both the creation from scratch and integration with legacy projects.
+        \item[--] Designed and developed chat and planning modules and B2B application for social activities.
+        \item[--] Created a comprehensive design system with Storybook documentation.
+        \item[--] Collaborated closely with Node.js developers to ensure the development of well-designed products.
+        \item[--] Organized unit and end-to-end testing in the project, resulting in a reduction of software defects.
+        \item[--] Managed team members, actively participated in scrum activities, provided consultation to colleagues, and evaluated risks.
+      \end{itemize}
+    \end{minipage}
+  }
+\end{tabularx}
 
-    \begin{tabularx}{\linewidth}{ @{}l r@{} }
-        \textbf{Frontend developer $|$ \underline{NORD CLAN}} & \hfill Russia, Saint-Petersburg, \textbf{Sep 2020 - Oct 2021} \\[3.75pt]
-        \multicolumn{2}{@{}X@{}}{
-            \begin{minipage}[t]{\linewidth}
-                \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-                    \item[--] Migrated a legacy frontend application from jQuery to React and Redux, resulting in reduced loading times and improved user experience.
-                    \item[--] Developed a single-page application for a medical/healthcare company, building the architecture of the application from scratch.
-                \end{itemize}
-            \end{minipage}
-        }
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+  \textbf{Frontend developer $|$ \underline{NORD CLAN}} & \hfill Russia, Saint-Petersburg, \textbf{Sep 2020 - Oct 2021} \\[3.75pt]
+  \multicolumn{2}{@{}X@{}}{
+    \begin{minipage}[t]{\linewidth}
+      \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Migrated a legacy frontend application from jQuery to React and Redux, resulting in reduced loading times and improved user experience.
+        \item[--] Developed a single-page application for a medical/healthcare company from scratch.
+      \end{itemize}
+    \end{minipage}
+  }
+\end{tabularx}
 
 %----------------------------------------------------------------------------------------
-%	EDUCATION
+%  EDUCATION
 %----------------------------------------------------------------------------------------
-    \section{Education}\label{sec:education}
-    \begin{tabularx}{\linewidth}{@{}l X@{}}
-        2016--2020 & Bachelor of Engineering at \textbf{Saint Petersburg Mining University} \hfill \normalsize (GPA: 4.7/5.0) \\
-        2013--2016 & Mathematics Degree at \textbf{AG SPSU — Academic Gymnasium} \hfill (GPA: 4.8/5.0) \\
-    \end{tabularx}
+\section{Education}\label{sec:education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+  2016--2020 & Bachelor of Engineering at \textbf{Saint Petersburg Mining University} \hfill \normalsize (GPA: 4.7/5.0) \\
+  2013--2016 & Mathematics Degree at \textbf{AG SPSU — Academic Gymnasium} \hfill (GPA: 4.8/5.0) \\
+\end{tabularx}
 
-    \vfill
+\vfill
 \end{document}
