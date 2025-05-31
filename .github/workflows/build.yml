@@ -12,28 +12,36 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Install TeX Live
-        run: sudo apt-get update && sudo apt-get install -y \
-          texlive \
-          texlive-publishers \
-          texlive-science \
-          texlive-bibtex-extra \
-          texlive-biblatex \
-          latexmk \
-          cm-super
+      - name: Install TeX Live from installer
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y perl wget tar xz-utils
+          wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+          tar -xzf install-tl-unx.tar.gz
+          cd install-tl-*
+          echo "selected_scheme scheme-small" > texlive.profile
+          echo "tlpdbopt_install_docfiles 0" >> texlive.profile
+          echo "tlpdbopt_install_srcfiles 0" >> texlive.profile
+          sudo ./install-tl -profile texlive.profile
+          echo "::add-path::/usr/local/texlive/2024/bin/x86_64-linux"
 
-      - name: LaTeX compile
+      - name: Install required TeX packages
+        run: |
+          sudo /usr/local/texlive/2024/bin/x86_64-linux/tlmgr install \
+            latexmk biblatex cm-super graphics geometry enumitem multirow xcolor parskip url titlesec supertabular
+
+      - name: Compile LaTeX
         working-directory: ${{ env.DIR }}
         run: |
-          pdflatex ${{ env.FILE }}
-          bibtex ${{ env.FILE }}
-          pdflatex ${{ env.FILE }}
-          pdflatex ${{ env.FILE }}
+          /usr/local/texlive/2024/bin/x86_64-linux/pdflatex ${{ env.FILE }}
+          /usr/local/texlive/2024/bin/x86_64-linux/bibtex ${{ env.FILE }}
+          /usr/local/texlive/2024/bin/x86_64-linux/pdflatex ${{ env.FILE }}
+          /usr/local/texlive/2024/bin/x86_64-linux/pdflatex ${{ env.FILE }}
 
-      - name: Move PDF to artifacts directory
-        run: mkdir -p github_artifacts && mv ${{ env.DIR }}/${{ env.FILE }}.pdf ./github_artifacts/
+      - name: Move PDF to artifacts
+        run: mkdir -p github_artifacts && mv ${{ env.DIR }}/${{ env.FILE }}.pdf github_artifacts/
 
-      - name: Upload PDF as artifact
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.FILE }}.pdf
