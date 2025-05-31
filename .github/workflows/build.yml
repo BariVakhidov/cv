@@ -27,16 +27,16 @@ jobs:
 
       - name: Install required TeX packages
         run: |
-          sudo /usr/local/texlive/2024/bin/x86_64-linux/tlmgr install \
+          sudo /usr/local/texlive/2025/bin/x86_64-linux/tlmgr install \
             latexmk biblatex cm-super graphics geometry enumitem multirow xcolor parskip url titlesec supertabular
 
       - name: Compile LaTeX
         working-directory: ${{ env.DIR }}
         run: |
-          /usr/local/texlive/2024/bin/x86_64-linux/pdflatex ${{ env.FILE }}
-          /usr/local/texlive/2024/bin/x86_64-linux/bibtex ${{ env.FILE }}
-          /usr/local/texlive/2024/bin/x86_64-linux/pdflatex ${{ env.FILE }}
-          /usr/local/texlive/2024/bin/x86_64-linux/pdflatex ${{ env.FILE }}
+          pdflatex ${{ env.FILE }}
+          bibtex ${{ env.FILE }}
+          pdflatex ${{ env.FILE }}
+          pdflatex ${{ env.FILE }}
 
       - name: Move PDF to artifacts
         run: mkdir -p github_artifacts && mv ${{ env.DIR }}/${{ env.FILE }}.pdf github_artifacts/
