@@ -1,5 +1,7 @@
 name: writeapaper
+
 on: [push]
+
 jobs:
   paper:
     runs-on: ubuntu-latest
@@ -9,31 +11,43 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
       - name: Install TeXlive
         run: sudo apt-get update && sudo apt-get install texlive texlive-publishers texlive-science latexmk cm-super
+
       - name: LaTeX compile
         working-directory: ${{ env.DIR }}
-        #run: latexmk -pdf -bibtex ${{ env.FILE }}
-        run: pdflatex ${{ env.FILE }}; bibtex ${{ env.FILE }}; pdflatex ${{ env.FILE }}; pdflatex ${{ env.FILE }};
-      - name: move
+        run: |
+          pdflatex ${{ env.FILE }}
+          bibtex ${{ env.FILE }}
+          pdflatex ${{ env.FILE }}
+          pdflatex ${{ env.FILE }}
+
+      - name: Move PDF to artifacts directory
         run: mkdir -p github_artifacts && mv ${{ env.DIR }}/${{ env.FILE }}.pdf ./github_artifacts/
-      - name: Upload pdf as artifact
-        uses: actions/upload-artifact@v2
+
+      - name: Upload PDF as artifact
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ env.FILE }}.pdf
           path: ./github_artifacts
+
   deploy:
     needs: [paper]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - uses: actions/download-artifact@v2
+
+      - name: Download artifact
+        uses: actions/download-artifact@v4
         with:
           path: github_artifacts
-      - name: move
+
+      - name: Move artifact to deploy folder
         run: mkdir -p github_deploy && mv github_artifacts/*/* github_deploy
-      - name: deploy on orphan branch
+
+      - name: Deploy on orphan branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
